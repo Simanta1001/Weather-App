@@ -15,3 +15,7 @@ See [Vite Configuration Reference](https://vite.dev/config/).
 1. **Install dependencies**:
    ```sh
    npm install
+
+2. **Run**:
+   ```sh
+   npm run dev
