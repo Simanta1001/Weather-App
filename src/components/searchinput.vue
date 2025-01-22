@@ -14,7 +14,7 @@ const handleSearch = () => {
   searchinput.timeout = setTimeout(async () => {
     if (searchinput.query !== '') {
       const res = await fetch(
-        `http://api.weatherapi.com/v1/search.json?key=d399a316cb9d4e7f80715134251001&q=${searchinput.query}`,
+        `https://api.weatherapi.com/v1/search.json?key=d399a316cb9d4e7f80715134251001&q=${searchinput.query}`,
       )
       const data = await res.json()
       searchinput.results = data
@@ -26,7 +26,7 @@ const handleSearch = () => {
 
 const getweather = async (id) => {
   const res = await fetch(
-    `http://api.weatherapi.com/v1/forecast.json?key=d399a316cb9d4e7f80715134251001&q=id:${id}&days=3&aqi=no&alerts=no`,
+    `https://api.weatherapi.com/v1/forecast.json?key=d399a316cb9d4e7f80715134251001&q=id:${id}&days=3&aqi=no&alerts=no`,
   )
   const data = await res.json()
   emit('place-data', data)
