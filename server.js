@@ -1,20 +1,11 @@
-import express from 'express';
-import { createProxyMiddleware } from 'http-proxy-middleware';
-
+const express = require('express');
 const app = express();
+const cors = require('cors');
 
-app.use(
-  '/api',
-  createProxyMiddleware({
-    target: 'https://api.weatherapi.com',
-    changeOrigin: true,
-    pathRewrite: {
-      '^/api': '', // Remove "/api" prefix when forwarding requests
-    },
-  })
-);
+// Your existing code for setting up routes
 
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Proxy server is running on http://localhost:${PORT}`);
+// Ensure the app listens on the correct port
+const port = process.env.PORT || 3000; // Default to 3000 if PORT is not provided
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
