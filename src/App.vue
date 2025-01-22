@@ -26,7 +26,7 @@ onMounted(async () => {
   const fetchWeatherData = async (city) => {
     try {
       const response = await fetch(
-        `http://api.weatherapi.com/v1/forecast.json?key=d399a316cb9d4e7f80715134251001&q=${city}&days=3&aqi=no&alerts=no`,
+        `https://api.weatherapi.com/v1/forecast.json?key=d399a316cb9d4e7f80715134251001&q=${city}&days=3&aqi=no&alerts=no`,
       )
       const data = await response.json()
       preloadedPlaces.value.push(data)
